@@ -300,16 +300,9 @@ Neuraya uses FastAPI, Uvicorn, Pydantic, python-dotenv, the OpenAI Python
 client, Bootstrap, and standard browser APIs. Review the licenses of all
 third-party dependencies and visual assets before redistribution.
 
-## Team Members
+## Team
 
 - Navya Roshni
 - Vishakha Talele
 - Sania Musliar
 - Sneha Nadar
-
-## Team Ownership
-
-This prototype is intended for team or academic use. Before redistributing or
-publishing it publicly, confirm project ownership and agree on the terms that
-apply to contributions from all team members. If it was created for an
-employer, college, client, or other organization, review that agreement first.
