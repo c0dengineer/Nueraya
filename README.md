@@ -301,7 +301,14 @@ Neuraya uses FastAPI, Uvicorn, Pydantic, python-dotenv, the OpenAI Python
 client, Bootstrap, and standard browser APIs. Review the licenses of all
 third-party dependencies and visual assets before redistribution.
 
-## Team and Ownership
+## Team Members
+
+- Navya Roshni
+- Vishakha Talele
+- Sania Musliar
+- Sneha Nadar
+
+## Team Ownership
 
 Contributors should agree in writing on project ownership and licensing before
 redistributing the project. If the project was created for an employer,
@@ -311,4 +318,4 @@ college, client, or other organization, review that agreement before publishing.
 
 This project is licensed under the [MIT License](LICENSE). Replace the
 copyright holder in `LICENSE` with the legal name of the owning team or
-organization before publishing.
+organization after the ownership agreement is finalized.
