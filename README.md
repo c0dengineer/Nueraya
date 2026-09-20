@@ -74,7 +74,6 @@ Nueraya/
 |   |-- style.css                    # Shared styles
 |   `-- image/                       # Frontend image assets, ignored by Git
 |-- .gitignore                      # Local secrets and generated files
-|-- LICENSE                         # MIT License
 `-- README.md
 ```
 
@@ -310,12 +309,7 @@ third-party dependencies and visual assets before redistribution.
 
 ## Team Ownership
 
-Contributors should agree in writing on project ownership and licensing before
-redistributing the project. If the project was created for an employer,
-college, client, or other organization, review that agreement before publishing.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE). Replace the
-copyright holder in `LICENSE` with the legal name of the owning team or
-organization after the ownership agreement is finalized.
+This prototype is intended for team or academic use. Before redistributing or
+publishing it publicly, confirm project ownership and agree on the terms that
+apply to contributions from all team members. If it was created for an
+employer, college, client, or other organization, review that agreement first.
