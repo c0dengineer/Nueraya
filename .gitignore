@@ -1,0 +1,23 @@
+# Python
+Backend/.venv/
+Backend/**/__pycache__/
+__pycache__/
+*.py[cod]
+
+# Environment secrets
+.env
+Backend/.env
+
+# Editor and operating-system files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+
+# Generated files and local runtime data
+*.log
+*.db
+.pytest_cache/
+node_modules/
+dist/
+build/

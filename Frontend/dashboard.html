@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parent Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* Background */
+body{
+    background: linear-gradient(to bottom right,#eef2ff,#f8f9fc);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Top Bar */
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.brand-text{
+    font-weight:700;
+    font-size:20px;
+    color:#080808;
+    font-family: 'Allura', cursive;
+}
+
+.home-link{
+    text-decoration:none;
+    font-weight:600;
+    color:#2563eb;
+}
+
+.home-link:hover{
+    text-decoration:underline;
+}
+
+/* Dashboard Title */
+.dashboard-title{
+    font-size:32px;  
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+/* Main Card */
+.dashboard-card{
+    background:white;
+    border-radius:24px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.dashboard-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.parent-name{
+    font-size:22px;
+    font-weight:700;
+}
+
+/* Blue Action Buttons */
+.primary-action-btn{
+    background:#2563eb;
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    margin-left:10px;
+    display:inline-block;
+    transition:0.3s;
+}
+
+.primary-action-btn:hover{
+    background:#1e4fd8;
+    transform:translateY(-2px);
+    box-shadow:0 6px 14px rgba(37,99,235,0.25);
+    color:white;
+}
+
+/* Child Card */
+.child-card{
+    background:#f8f9ff;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.child-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.child-name{
+    font-size:18px;
+    font-weight:700;
+}
+
+.child-meta{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.meta-box{
+    background:white;
+    padding:10px 12px;
+    border-radius:10px;
+    font-size:13px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.meta-box strong{
+    display:block;
+    font-size:12px;
+    color:#6c757d;
+}
+
+/* Risk Badge */
+.risk-badge{
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:600;
+    color:white;
+}
+
+/* View Details Button */
+.view-btn{
+    background:#2563eb;
+    color:white;
+    padding:6px 14px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:13px;
+}
+
+.view-btn:hover{
+    background:#1e4fd8;
+    color:white;
+}
+
+/* Detail Section */
+.detail-section{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-top:15px;
+    display:none;
+    box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Screening Table */
+table{
+    width:100%;
+    margin-top:15px;
+}
+
+table th{
+    background:#f1f5ff;
+    padding:8px;
+    font-size:13px;
+}
+
+table td{
+    padding:8px;
+    font-size:13px;
+}
+
+.table thead th{
+    background:#f3f4f6;
+    font-weight:600;
+}
+
+.table tbody tr:hover{
+    background:#f9fafb;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container mt-5">
+
+<div class="dashboard-card">
+
+    <!-- TOP NAV BAR -->
+<div class="top-bar">
+    <a href="index.html" class="home-link">
+        ← Go to Home
+    </a>
+
+    <div class="brand-box">
+        <img src="image/logo.png" class="logo-img">
+                
+            <span class="brand-text">Neuraya</span>
+    </div>
+</div>
+
+<!-- DASHBOARD TITLE + ACTIONS -->
+<div class="dashboard-header">
+    <div>
+        <div class="dashboard-title">Parent Dashboard</div>
+        <div class="parent-name">
+            Welcome, <span id="parentName"></span>
+        </div>
+    </div>
+
+    <div>
+    <button class="primary-action-btn" onclick="toggleChildList()">
+        View Child List
+    </button>
+    <a href="childinfo.html" class="primary-action-btn">+ Add New Child</a>
+    <a href="childinfo.html" class="primary-action-btn">Start New Screening</a>
+    </div>
+</div>
+
+    <!-- CHILD LIST -->
+    <div id="childSection" style="display:none;">
+        <div id="childContainer"></div>
+    </div>
+
+    <div class="child-card" style="display:none;">
+
+        <div class="child-header">
+            <div class="child-name">&nbsp;</div>
+            <span class="risk-badge" style="background:#f1f5ff;">&nbsp;</span>
+        </div>
+
+        <div class="child-meta">
+            <div class="meta-box">
+                <strong>Age</strong>
+                &nbsp;
+            </div>
+
+            <div class="meta-box">
+                <strong>Gender</strong>
+                &nbsp;
+            </div>
+
+            <div class="meta-box">
+                <strong>Total Screenings</strong>
+                &nbsp;
+            </div>
+
+            <div class="meta-box">
+                <strong>Latest Screening</strong>
+                &nbsp;
+            </div>
+        </div>
+
+        <a href="#" class="view-btn">View Detailed Results</a>
+
+    </div>
+
+</div>
+
+    <!-- DETAIL SECTION -->
+    <div class="detail-section" id="detailSection">
+
+        <h6><strong>Overall Risk: 62%</strong></h6>
+
+        <div class="mt-3">
+            <strong>Domain Breakdown:</strong>
+            <ul>
+                <li>Social Interaction: 55%</li>
+                <li>Communication: 60%</li>
+                <li>Behavior Patterns: 70%</li>
+                <li>Sensory Response: 63%</li>
+            </ul>
+        </div>
+
+        <div class="mt-3">
+            <strong>Screening History:</strong>
+
+            <table class="table table-bordered mt-2">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Risk %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>24-06-2026</td>
+                        <td>62%</td>
+                    </tr>
+                    <tr>
+                        <td>10-01-2025</td>
+                        <td>58%</td>
+                    </tr>
+                    <tr>
+                        <td>01-07-2024</td>
+                        <td>50%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+<script>
+
+const API_BASE = "http://localhost:8080"; // change if needed
+
+async function loadChildren() {
+    try {
+
+        const token = localStorage.getItem("token");
+
+        const response = await fetch(`${API_BASE}/children`, {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        });
+
+        const children = await response.json();
+
+        const container = document.getElementById("childContainer");
+        container.innerHTML = "";
+
+        for (const child of children) {
+
+            // Get latest screening
+            const screeningRes = await fetch(`${API_BASE}/screenings/latest/${child.id}`, {
+                headers: {
+                    "Authorization": "Bearer " + token
+                }
+            });
+
+            const screening = await screeningRes.json();
+
+            const riskInfo = getRiskLevel(screening.probability);
+
+            container.innerHTML += `
+                <div class="child-card">
+                    <div class="child-header">
+                        <div class="child-name">${child.name}</div>
+                        <span class="risk-badge" style="background:${riskInfo.color}">
+                            ${riskInfo.text} Risk
+                        </span>
+                    </div>
+
+                    <div class="child-meta">
+                        <div class="meta-box">
+                            <strong>Age</strong>
+                            ${child.age}
+                        </div>
+                        <div class="meta-box">
+                            <strong>Gender</strong>
+                            ${child.gender}
+                        </div>
+                        <div class="meta-box">
+                            <strong>Total Screenings</strong>
+                            ${screening.totalScreenings}
+                        </div>
+                        <div class="meta-box">
+                            <strong>Latest Screening</strong>
+                            ${screening.date}
+                        </div>
+                    </div>
+
+                    <a href="#" class="view-btn" onclick="toggleDetail(${child.id})">
+                        View Detailed Results
+                    </a>
+
+                    <div class="detail-section" id="detail-${child.id}">
+                        <h6><strong>Overall Risk:</strong> ${screening.probability}%</h6>
+
+                        <div class="mt-3">
+                            <strong>Domain Breakdown:</strong>
+                            <ul>
+                                <li>Social Interaction: ${screening.breakdown.social}%</li>
+                                <li>Communication: ${screening.breakdown.communication}%</li>
+                                <li>Behavior Patterns: ${screening.breakdown.behavior}%</li>
+                                <li>Sensory Response: ${screening.breakdown.sensory}%</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-3">
+                            <strong>Screening History:</strong>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Risk %</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    ${screening.history.map(h => `
+                                        <tr>
+                                            <td>${h.date}</td>
+                                            <td>${h.risk}%</td>
+                                        </tr>
+                                    `).join("")}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            `;
+        }
+
+    } catch (error) {
+        console.error("Error loading children:", error);
+    }
+}
+
+function getRiskLevel(risk){
+    if(risk<=25) return {text:"Low",color:"green"};
+    if(risk<=50) return {text:"Mild",color:"#eab308"};
+    if(risk<=75) return {text:"Moderate",color:"orange"};
+    return {text:"High",color:"red"};
+}
+
+function toggleDetail(id){
+    let section = document.getElementById("detail-"+id);
+    section.style.display = section.style.display === "block" ? "none" : "block";
+}
+
+function toggleChildList(){
+    let section = document.getElementById("childSection");
+    section.style.display = section.style.display === "none" ? "block" : "none";
+}
+
+function escapeHtml(value) {
+    const element = document.createElement("div");
+    element.textContent = value || "Not provided";
+    return element.innerHTML;
+}
+
+function renderLocalDashboard() {
+    const user = getSignedInUser();
+    if (!user) { window.location.href = "login.html"; return; }
+    const allHistory = JSON.parse(localStorage.getItem("neurayaScreeningHistory") || "[]");
+    const children = getChildren().filter(child => child.userEmail === user.email);
+    const parent = user.name || "Parent";
+    document.getElementById("parentName").textContent = parent;
+    const section = document.getElementById("childSection");
+    const container = document.getElementById("childContainer");
+    section.style.display = "block";
+
+    if (!children.length) {
+        container.innerHTML = `<div class="child-card"><strong>No child profile yet.</strong><p class="mb-0 mt-2">Add a child to begin a private, educational screening.</p></div>`;
+        return;
+    }
+    container.innerHTML = children.map(child => {
+        const history = allHistory.filter(item => item.userEmail === user.email && item.childId === child.id);
+        const latest = history[0];
+        const risk = latest?.risk || "Not screened";
+        const color = risk === "Low" ? "#198754" : risk === "Moderate" ? "#d97706" : risk === "High" ? "#dc3545" : "#64748b";
+        const rows = history.map(item => `<tr><td>${new Date(item.createdAt).toLocaleDateString()}</td><td>${item.probability}% (${item.risk})</td><td><button class="delete-btn" type="button" onclick="deleteLocalScreening('${item.createdAt}')">Delete</button></td></tr>`).join("") || "<tr><td colspan='3'>No screenings yet</td></tr>";
+        const domains = latest ? Object.entries(latest.section_breakdown).map(([name, value]) => `<li>${escapeHtml(name)}: ${value}%</li>`).join("") : "<li>Complete a screening to see domain insights.</li>";
+        return `<div class="child-card"><div class="child-header"><div class="child-name">${escapeHtml(child.name)}</div><span class="risk-badge" style="background:${color}">${risk} risk</span></div><div class="child-meta"><div class="meta-box"><strong>Date of birth</strong>${escapeHtml(child.dob)}</div><div class="meta-box"><strong>Gender</strong>${escapeHtml(child.gender)}</div><div class="meta-box"><strong>Total screenings</strong>${history.length}</div><div class="meta-box"><strong>Latest result</strong>${latest ? latest.probability + "%" : "Not screened"}</div></div><button class="view-btn border-0 me-2" type="button" onclick="startChildScreening('${child.id}')">Retake screening</button><button class="view-btn border-0 me-2" type="button" onclick="editChild('${child.id}')">Edit child</button><button class="view-btn border-0" type="button" onclick="toggleDetail('${child.id}')">View detailed results</button><div class="detail-section" id="detail-${child.id}"><h6><strong>Domain breakdown</strong></h6><ul>${domains}</ul><table class="table table-bordered"><thead><tr><th>Date</th><th>Screening result</th><th>Action</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+    }).join("");
+}
+
+function startChildScreening(id) { sessionStorage.setItem("neurayaActiveChildId", id); window.location.href = "disclaimer.html"; }
+function editChild(id) { sessionStorage.setItem("neurayaEditingChildId", id); window.location.href = "editchild.html"; }
+
+function deleteLocalScreening(createdAt) {
+    const history = JSON.parse(localStorage.getItem("neurayaScreeningHistory") || "[]");
+    const index = history.findIndex(item => item.createdAt === createdAt);
+    const screening = history[index];
+    if (!screening || !confirm("Delete this screening result? This cannot be undone.")) return;
+
+    history.splice(index, 1);
+    localStorage.setItem("neurayaScreeningHistory", JSON.stringify(history));
+    if (history.length) {
+        localStorage.setItem("neurayaLatestReport", JSON.stringify(history[0]));
+    } else {
+        localStorage.removeItem("neurayaLatestReport");
+    }
+    renderLocalDashboard();
+}
+
+document.addEventListener("DOMContentLoaded", renderLocalDashboard);
+
+</script>
+
+</body>
+</html>

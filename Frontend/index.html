@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neuraya | Early Development Screening</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            
+                <img src="image/logo.png" class="logo-img">
+                
+            <span class="brand-text">Neuraya</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Items -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+
+                <li class="nav-item">
+                    <a class="nav-link custom-link active" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link custom-link" href="#" onclick="goToTest()">Test</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link custom-link" href="dashboard.html">Dashboard</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link custom-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item" id="userArea">
+                    <a href="login.html" class="btn login-btn">
+                        Login
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container-fluid px-5">
+        <div class="row align-items-center min-vh-75">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 text-lg-start text-center hero-text">
+                <h1 class="hero-title">
+                    Early detection <br>
+                    makes a <span class="highlight-text1">lifetime</span><br><span class="highlight-text2">of difference</span>.
+                </h1>
+
+                <p class="lead mt-4">
+                    A gentle and parent-friendly autism screening tool designed 
+                    to help you understand your child's development.
+                </p>
+
+                <div class="mt-4">
+                    <button class="btn btn-primary btn-lg me-3 px-4 py-2" onclick="goToTest()">
+                        Start Screening
+                    </button>
+
+                    <button class="btn btn-outline-secondary btn-lg px-4 py-2" onclick="scrollToWhy()">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                <img src="https://autismawarenesscentre.com/wp-content/uploads/bigstock-Kids-Playing-Block-Toys-In-Pla-350958596.jpg" alt="Child Playing" class="hero-image img-fluid">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Content on Scrolling -->
+ <!-- Why Choose Our Screening Tool? -->
+ <section id="why" class="why-section">
+    <div class="container text-center">
+
+        <h2 class="why-title">Why Choose Our Screening Tool?</h2>
+        <p class="why-subtitle">Designed with care, backed by research.</p>
+
+        <div class="row mt-5 g-4">
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="why-card">
+                    <div class="icon-box">
+                        <img src="image/family.png" alt = "Friendly">
+                    </div>
+                    <h4>Parent-Friendly</h4>
+                    <p>Clear, compassionate questions designed for busy parents.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="why-card">
+                    <div class="icon-box">
+                        <img src="image/brain.png" alt = "Research">
+                    </div>
+                    <h4>Research-Based</h4>
+                    <p>Questions aligned with recognized screening criteria.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="why-card">
+                    <div class="icon-box">
+                        <img src="image/protection.png" alt = "Cofidential">
+                    </div>
+                    <h4>Confidential</h4>
+                    <p>Your information is private and secure.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="why-card">
+                    <div class="icon-box">
+                        <img src="image/quick.png" alt = "Quick">
+                    </div>
+                    <h4>Quick & Easy</h4>
+                    <p>Complete in 10–15 minutes at your own pace.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Does any of this feel familiar? -->
+<section class="awareness-section">
+    <div class="container text-center">
+
+        <h2 class="section-title">Does any of this feel familiar?</h2>
+        <p class="section-subtitle">
+            Many adults only begin to recognize these patterns later in life. 
+            What’s often overlooked is how difficult they can be to understand at first.
+        </p>
+
+        <div class="row g-4 mt-5">
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bubble-card" w-100>
+                    <div class="speech-bubble">
+                        “I wasn’t recognized as autistic growing up. It took years of burnout before things finally made sense.”
+                    </div>
+                    <img src="image/person1.png" class="person-img">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bubble-card" w-100>
+                    <div class="speech-bubble">
+                        “As a child, it looked like meltdowns. As an adult, it looks like exhaustion, overthinking, and trying too hard to fit in.”
+                    </div>
+                    <img src="image/person2.png" class="person-img">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bubble-card" w-100>
+                    <div class="speech-bubble">
+                        “As a child, it looked like meltdowns. As an adult, it looks like exhaustion, overthinking, and trying too hard to fit in.”
+                    </div>
+                    <img src="image/person3.png" class="person-img">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Why this can be hard to figure out? -->
+<section class="awareness-section bg-light">
+    <div class="container text-center">
+
+        <h2 class="section-title">Why this can be hard to figure out?</h2>
+        <p class="section-subtitle">
+            There are several reasons autism can go unrecognized in adulthood.
+        </p>
+
+        <div class="row g-4 mt-5">
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bubble-card" w-100 style="background:#e7a8a8;">
+                    <div class="speech-bubble">
+                        “Autism often overlaps with ADHD, anxiety, trauma, or alexithymia — blurring the picture and making it easy to miss.”
+                    </div>
+                    <img src="image/person4.png" class="person-img">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bubble-card" w-100 style="background:#4caf7d;">
+                    <div class="speech-bubble">
+                        “Many adults don’t match childhood or media stereotypes — especially high maskers and women who appear social and successful.”
+                    </div>
+                    <img src="image/person5.png" class="person-img">
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="bubble-card" w-100 style="background:#4aaed1;">
+                    <div class="speech-bubble">
+                        “Autism has no single look. Autistic adults are diverse in age, gender, culture, profession, and personality.”
+                    </div>
+                    <img src="image/person6.png" class="person-img">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="row">
+
+            <!-- India Helplines -->
+            <div class="col-md-4 footer-col">
+                <h5>Indian Helplines</h5>
+                <p>📞 1800-103-0977 <br><small>(Autism India)</small></p>
+                <p>📞 +91-11-4054-0991 <br><small>(Action for Autism)</small></p>
+                <p>🌐 rehabcouncil.nic.in <br><small>(RCI Therapists)</small></p>
+            </div>
+
+            <!-- India Centers -->
+            <div class="col-md-4 footer-col">
+                <h5>Indian Treatment Centers</h5>
+                <p>🏥 Kokilaben Child Development Centre <br><small>Mumbai</small></p>
+                <p>• autism-india.org</p>
+                <p>• indiaautismcenter.org</p>
+            </div>
+
+            <!-- Global Helplines -->
+            <div class="col-md-4 footer-col">
+                <h5>Global Helplines</h5>
+                <p>🌍 USA: 1-888-288-4762</p>
+                <p>🌍 UK: 0808 800 4104</p>
+                <p>🌍 Australia: 1800 277 328</p>
+                <p>🌍 Canada: 1-866-684-4115</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom text-center mt-4">
+
+    <hr class="footer-divider">
+
+    <p class="copyright">
+        © 2026 <strong>Neuraya</strong>. This tool is for educational purposes and not a medical diagnosis.
+    </p>
+
+    <div class="credits-section mt-3">
+        <h6 class="credits-title">Developed By</h6>
+
+        <div class="row justify-content-center mt-2 credits-row">
+
+            <div class="col-auto credit-item">
+                <strong>Sneha Nadar</strong>
+                <small>(AIML)</small>
+            </div>
+
+            <div class="col-auto credit-item">
+                <strong>Vishakha Talele</strong>
+                <small>(Backend)</small>
+            </div>
+
+            <div class="col-auto credit-item">
+                <strong>Navya Roshni</strong>
+                <small>(Frontend)</small>
+            </div>
+
+            <div class="col-auto credit-item">
+                <strong>Sania Musliar</strong>
+                <small>(Database)</small>
+            </div>
+
+        </div>
+    </div>
+    
+</div>
+    </div>
+</footer>
+
+<!-- Chatbot -->
+<!-- Floating Button -->
+<button class="btn btn-primary chat-toggle-btn" onclick="toggleChat()">💬</button>
+
+<!-- Chat Window -->
+<div class="chat-window" id="chatWindow">
+  
+  <div class="chat-header">
+    Neuraya Assistant 🤖
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="chat-message bot-message">
+      Hello 👋 How can I help you today? Please choose a question below.
+    </div>
+
+    <div class="chat-options" id="chatOptions">
+      <!-- Questions will load here -->
+    </div>
+  </div>
+
+  <div class="chat-footer text-center">
+    <small>Menu-based support assistant</small>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+<!-- Chatbot -->
+<script>
+  const API_BASE = "http://localhost:8000/chat";  // Change when deployed
+
+  function toggleChat() {
+    const chat = document.getElementById("chatWindow");
+    chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+  }
+
+  async function loadQuestions() {
+    try {
+      const response = await fetch(`${API_BASE}/questions`);
+      const data = await response.json();
+
+      const optionsDiv = document.getElementById("chatOptions");
+      optionsDiv.innerHTML = "";
+
+      data.questions.forEach(q => {
+        const btn = document.createElement("button");
+        btn.className = "btn btn-outline-primary btn-sm";
+        btn.innerText = q.question;
+        btn.onclick = () => askQuestion(q.id, q.question);
+        optionsDiv.appendChild(btn);
+      });
+
+    } catch (error) {
+      console.error("Error loading questions:", error);
+    }
+  }
+
+  async function askQuestion(id, questionText) {
+
+    const chatBody = document.getElementById("chatBody");
+
+    const userMsg = document.createElement("div");
+    userMsg.className = "chat-message user-message";
+    userMsg.innerText = questionText;
+    chatBody.appendChild(userMsg);
+
+    try {
+      const response = await fetch(`${API_BASE}/ask/${id}`, {
+        method: "POST"
+      });
+
+      const data = await response.json();
+
+      const botMsg = document.createElement("div");
+      botMsg.className = "chat-message bot-message";
+      botMsg.innerText = data.answer;
+      chatBody.appendChild(botMsg);
+
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+    } catch (error) {
+      console.error("Error fetching answer:", error);
+    }
+  }
+
+  function toggleChat() {
+    const chat = document.getElementById("chatWindow");
+    chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+  }
+
+  // 🔹 Chat Data (Frontend Only)
+  const CHAT_DATA = {
+    1: {
+      question: "How can I improve my child's communication skills?",
+      answer: "Encourage storytelling, read together daily, ask open-ended questions, and engage in interactive play."
+    },
+    2: {
+      question: "How can I help my child with social interaction?",
+      answer: "Arrange small play sessions, practice turn-taking games, and model positive social behavior during daily activities."
+    },
+    3: {
+      question: "How do I handle frequent tantrums?",
+      answer: "Identify triggers, maintain consistent routines, stay calm during episodes, and reinforce positive behavior gently."
+    },
+    4: {
+      question: "How important is routine for children?",
+      answer: "Consistent routines provide comfort and reduce anxiety. Predictable sleep, meals, and play schedules improve behavior."
+    },
+    5: {
+      question: "When should I consult a specialist?",
+      answer: "If developmental or behavioral concerns persist over time, consulting a pediatrician or developmental specialist is recommended."
+    },
+    6: {
+      question: "I am worried about my child. What should I do?",
+      answer: "It is completely normal to feel concerned. Observe patterns calmly and seek guidance from professionals if needed. Early support makes a difference."
+    }
+  };
+
+  function loadQuestions() {
+    const optionsDiv = document.getElementById("chatOptions");
+    optionsDiv.innerHTML = "";
+
+    Object.keys(CHAT_DATA).forEach(id => {
+      const btn = document.createElement("button");
+      btn.className = "btn btn-outline-primary btn-sm d-block mb-2";
+      btn.innerText = CHAT_DATA[id].question;
+      btn.onclick = () => askQuestion(id);
+      optionsDiv.appendChild(btn);
+    });
+  }
+
+  function askQuestion(id) {
+    const chatBody = document.getElementById("chatBody");
+
+    // User message
+    const userMsg = document.createElement("div");
+    userMsg.className = "chat-message user-message";
+    userMsg.innerText = CHAT_DATA[id].question;
+    chatBody.appendChild(userMsg);
+
+    // Bot reply
+    const botMsg = document.createElement("div");
+    botMsg.className = "chat-message bot-message";
+    botMsg.innerText = CHAT_DATA[id].answer;
+    chatBody.appendChild(botMsg);
+
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }
+
+  loadQuestions();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
